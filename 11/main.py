@@ -98,10 +98,6 @@ def read_monkeys(filename: str):
                 mode = 'M'
 
 
-def relief(worry: int) -> int:
-    return worry // 3
-
-
 def play(monkeys: List[Monkey], rounds: int, lcm: int, worry_divisor: int):
     for _ in range(rounds):
         for m in monkeys:
@@ -118,7 +114,6 @@ def play(monkeys: List[Monkey], rounds: int, lcm: int, worry_divisor: int):
 
 def get_monkey_business(monkeys: List[Monkey]) -> int:
     s = sorted(monkeys, key=lambda x: x.insp_count, reverse=True)
-    #print(s)
     return s[0].insp_count * s[1].insp_count
 
 
