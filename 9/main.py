@@ -41,10 +41,9 @@ def get_movement_vector(h: Coords, t: Coords) -> Coords:
         if v == 0:
             return 0
     
-        sign = v // abs(v)
-        return min(1, abs(v)) * sign
+        normalized_step = v // abs(v)
+        return normalized_step
 
-    
     return (step_limiter(h[0] - t[0]), step_limiter(h[1] - t[1]))
 
 
